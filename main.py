@@ -43,7 +43,6 @@ def sort_patients(sort_by: str = Query(..., description = 'Sort on the basis f h
     data = load_data()
 
     sort_order = True if order == 'desc'else False
-
     sorted_data = sorted(data.values(), key = lambda x: x.get(sort_by,0), reverse = False)
 
     return sorted_data
