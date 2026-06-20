@@ -82,6 +82,8 @@ order: str = Query('asc', description = 'sort in asc or desc order')):
 
 
 
+
+
 @app.post('/create')
 def create_patient(patient: Patient):
     #load existing data
