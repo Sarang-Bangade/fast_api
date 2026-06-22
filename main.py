@@ -5,6 +5,7 @@ import json
 from pydantic import BaseModel, Field, computed_field
 app = FastAPI()
 
+
 class Patient (BaseModel):
     id : Annotated[str, Field(...,description='Id of the patient', example='P001')]
     name : Annotated[str, Field(...,description='Name of the patient')]
@@ -78,7 +79,6 @@ order: str = Query('asc', description = 'sort in asc or desc order')):
     sort_order = True if order ==' desc' else False
     sorted_data = sorted(data.values(), key=lambda x: x.get(sort_by, 0), reverse = sort_order)
     return sorted_data
-
 
 @app.post('/create')
 def create_patient(patient: Patient):
