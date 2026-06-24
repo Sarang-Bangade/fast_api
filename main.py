@@ -47,7 +47,6 @@ def save_data(data):
 def hello():
     return{'message':'Hello sarang here from fastApi'}
 
-
 @app.get('/about')
 def about():
     return{'message':'Functional api to manage pateient records'}
