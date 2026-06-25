@@ -14,7 +14,6 @@ class Patient (BaseModel):
     height : Annotated[float, Field(...,gt=0, description='height of the patient in mtrs')]
     weight : Annotated[float, Field(...,gt = 0, description="Weight of the patient in kgs")]
     
-    
     @computed_field
     @property
     def bmi(self) -> float:
