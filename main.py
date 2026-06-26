@@ -5,7 +5,6 @@ import json
 from pydantic import BaseModel, Field, computed_field
 app = FastAPI()
 
-
 class Patient (BaseModel):
     id : Annotated[str, Field(...,description='Id of the patient', example='P001')]
     name : Annotated[str, Field(...,description='Name of the patient')]
@@ -15,7 +14,6 @@ class Patient (BaseModel):
     height : Annotated[float, Field(...,gt=0, description='height of the patient in mtrs')]
     weight : Annotated[float, Field(...,gt = 0, description="Weight of the patient in kgs")]
     
-
     @computed_field
     @property
     def bmi(self) -> float:
