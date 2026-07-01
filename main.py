@@ -6,8 +6,6 @@ from pydantic import BaseModel, Field, computed_field
 app = FastAPI()
 
 
-
-
 class Patient (BaseModel):
     id : Annotated[str, Field(...,description='Id of the patient', example='P001')]
     name : Annotated[str, Field(...,description='Name of the patient')]
