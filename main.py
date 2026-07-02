@@ -26,7 +26,7 @@ class Patient (BaseModel):
     def verdict(self) -> str:
         if self.bmi < 18.5:
             return 'underweight'
-        
+    
         elif self.bmi < 25:
             return 'Normal'
         elif self.bmi < 30:
