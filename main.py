@@ -1,11 +1,9 @@
 from typing import Annotated, Literal
 from fastapi.responses import JSONResponse
 from fastapi  import FastAPI, HTTPException, Path, Query
-
 import json
-
-
 from pydantic import BaseModel, Field, computed_field
+
 app = FastAPI()
 
 class Patient (BaseModel):
@@ -82,6 +80,8 @@ order: str = Query('asc', description = 'sort in asc or desc order')):
     sorted_data = sorted(data.values(), key=lambda x: x.get(sort_by, 0), reverse = sort_order)
     return sorted_data
 
+
+#post method
 @app.post('/create')
 def create_patient(patient: Patient):
     #load existing data
